@@ -5,7 +5,7 @@ def best_stock(data):
         if data[i] > max_price:
             max_price = data[i]
             best_stock_name = i
-    return best_stock_name
+    return best_stock_name #Best solution: return max(data, key=data.__getitem__)
     
 if __name__ == '__main__':
     print("Example:")
