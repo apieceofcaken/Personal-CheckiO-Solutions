@@ -1,0 +1,19 @@
+def sun_angle(time):
+    tempolist0 = time.split(':')
+    tempolist = []   #unnecessary list!
+    for i in tempolist0:
+        tempolist.append(int(i))
+        
+    if tempolist[0] < 6 or (tempolist[0] >= 18 and tempolist[1] > 0):
+        return "I don't see the sun!"
+    else:
+        return ((tempolist[0] - 6) * 15) + (tempolist[1] / 60.00 * 15.00)
+
+if __name__ == '__main__':
+    print("Example:")
+    print(sun_angle("07:00"))
+
+    #These "asserts" using only for self-checking and not necessary for auto-testing
+    assert sun_angle("07:00") == 15
+    assert sun_angle("01:23") == "I don't see the sun!"
+    print("Coding complete? Click 'Check' to earn cool rewards!")
